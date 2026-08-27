@@ -33,7 +33,7 @@ nmap -sV 192.168.0.24
 Navigating to `http://192.168.0.24` revealed an administrative web login prompt. Because user input was passed unsanitized straight into backend MySQL query strings, an **SQL Injection (SQLi)** payload was injected into the Username field:
 
 ```text
-admin' OR '1'='1
+' OR '1'='1
 ```
 
 <!-- 🖼️ PLACE SECOND IMAGE HERE -->
