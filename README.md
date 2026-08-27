@@ -22,7 +22,7 @@ nmap -sV 192.168.0.24
 * **Port 3306/tcp:** MySQL database back-end
 
 <!-- 🖼️ PLACE FIRST IMAGE HERE -->
-![Nmap Scan Results](nmap_scan_lvl2.png)
+![Nmap Scan Results](images/nmap_scan_lvl2.png)
 *Figure 1: Service identification highlighting active web and database components.*
 
 ---
