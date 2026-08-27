@@ -105,9 +105,9 @@ gcc -o rootme exploit.c
 ./rootme
 ```
 <!-- 🖼️ PLACE FIFTH IMAGE HERE -->
-![Privilege Escalation to Root](images/root_escalation2_lvl2.png)
+![Privilege Escalation to Root](images/root_escalation_lvl2.png)
 
-*Figure 5: Exposing administrative shadow configurations via the root context.*
+*Figure 5: Compiling and executing the exploit module to obtain administrative shell status.*
 
 **Result:** The execution completed successfully, exploiting the local memory allocation boundaries to instantly drop execution flow into an elevated root access context (`sh-3.00#`).
 
@@ -127,10 +127,10 @@ john:\$1\$wk7kHI5I\$2kNTw6ncQQCecJ.5b8xTL1:14525:0:99999:7:::
 harold:\$1\$7d.sVxgm\$3MYWsHDv0F/LP.mjL9lp/1:14529:0:99999:7:::
 ```
 
-<!-- 🖼️ PLACE FIFTH IMAGE HERE -->
+<!-- 🖼️ PLACE SIXTH IMAGE HERE -->
 ![Privilege Escalation to Root](images/root_escalation2_lvl2.png)
 
-*Figure 5: Exposing administrative shadow configurations via the root context.*
+*Figure 6: Exposing administrative shadow configurations via the root context.*
 
 ---
 
