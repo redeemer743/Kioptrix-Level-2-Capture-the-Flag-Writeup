@@ -70,7 +70,7 @@ apache
 <!-- 🖼️ PLACE SECOND IMAGE HERE -->
  ![Nmap Scan Results](images/sql_command2_lvl2.png)
 *Figure 3: unified logical payload*
-![Initial Access Foothold](foothold_lvl2.png)
+![Initial Access Foothold](images/foothold_lvl2.png)
 *Figure 4: Successfully catching the interactive shell session using a Netcat listener.*
 
 ---
