@@ -111,7 +111,10 @@ gcc -o rootme exploit.c
 bash-3.00\$ whoami
 root
 ```
+<!-- 🖼️ PLACE FIFTH IMAGE HERE -->
+![Privilege Escalation to Root](images/root_escalation2_lvl2.png)
 
+*Figure 5: Exposing administrative shadow configurations via the root context.*
 ---
 
 ## 🔓 Stage 4: Post-Exploitation Loot
