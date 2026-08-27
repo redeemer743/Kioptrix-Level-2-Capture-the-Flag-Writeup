@@ -57,6 +57,7 @@ By appending an operator payload, the system command syntax was hijacked.
    ```
    <!-- 🖼️ PLACE FOURTH IMAGE HERE -->
 ![Initial Access Foothold](images/foothold_lvl2.png)
+```text
 *Figure 4: Successfully catching the interactive shell session using a Netcat listener.*
 
 ---
