@@ -111,6 +111,7 @@ root
 
 <!-- 🖼️ PLACE FIFTH IMAGE HERE -->
 ![Privilege Escalation to Root](images/root_escalation_lvl2.png)
+
 *Figure 5: Compiling and executing the exploit module to obtain administrative shell status.*
 
 ---
