@@ -39,7 +39,6 @@ admin' OR '1'='1
 *Figure 2: SQL Injection Command.*
 *The password field was left completely blank.*
 
-
 **Result:** The database logic evaluated the statement as universally true, ignored the password validation parameter, and successfully authenticated entry into the panel dashboard.
 
 ---
