@@ -56,6 +56,7 @@ nc -lvnp 4444
 
 <!-- 🖼️ PLACE FOURTH IMAGE HERE -->
 ![Initial Access Foothold](images/foothold_lvl2.png)
+
 *Figure 4: Setting up the Netcat listener to catch the interactive shell session.*
 
 ---
