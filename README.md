@@ -124,7 +124,7 @@ harold:\$1\$7d.sVxgm\$3MYWsHDv0F/LP.mjL9lp/1:14529:0:99999:7:::
 ```
 
 <!-- 🖼️ PLACE FIFTH IMAGE HERE -->
-![Privilege Escalation to Root](images/root_escalation_lvl2.png)
+![Privilege Escalation to Root](images/root_escalation2_lvl2.png)
 
 *Figure 5: Exposing administrative shadow configurations via the root context.*
 
